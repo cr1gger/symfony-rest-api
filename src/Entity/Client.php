@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ClientRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -42,6 +44,24 @@ class Client
      * @ORM\Column(type="integer", nullable=true)
      */
     private $updated_at;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Brand", mappedBy="client")
+     */
+    private $brands;
+
+    public function __construct()
+    {
+        $this->brands = new ArrayCollection();
+    }
+
+    /**
+     * @return Collection|Brand[]
+     */
+    public function getProducts(): Collection
+    {
+        return $this->brands;
+    }
 
     public function getId(): ?int
     {

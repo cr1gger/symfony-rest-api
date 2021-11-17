@@ -22,6 +22,11 @@ class Brand
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Client", inversedBy="brands")
+     */
+    private $client;
+
+    /**
      * @ORM\Column(type="integer", nullable=true)
      */
     private $client_id;
