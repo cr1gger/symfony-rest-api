@@ -1,3 +1,11 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+api_v1:
+  resource: ../src/Controller/Api/v1
+  prefix: /api/v1
+  name_prefix: api.v1.
+  trailing_slash_on_root: true
+  type: annotation
+  defaults:
+    _format: json
