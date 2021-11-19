@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-class ClientController extends GeneralController
+class ClientController extends SecurityController
 {
     /**
      *

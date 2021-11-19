@@ -13,6 +13,7 @@ class GeneralController extends AbstractController
         ERROR_LENGTH = 3,
         ERROR_NOT_FOUND = 4,
         ERROR_EMPTY_BODY = 5,
+        ERROR_TEMPLATE = 6,
         ERROR_UNAUTHORIZED = 10;
 
 
